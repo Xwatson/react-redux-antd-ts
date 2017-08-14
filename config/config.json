@@ -1,0 +1,65 @@
+{
+  "DEVELOPMENT" : {
+    "cdnHost"               : "http://localhost",
+    "apiHost"               : "http://devapi.test.oborexpress.com",
+    "port"                  : 40001,
+    "compiler_public_path"  : "http://localhost:40001/",
+    "source_maps"           : true
+  },
+
+  "QA" : {
+    "cdnHost"                   : "http://consignor.test.oborexpress.com",
+    "apiHost"                   : "http://api.test.oborexpress.com",
+    "port"                      : "",
+    "compiler_public_path"      : "http://consignor.test.oborexpress.com/",
+    "compiler_fail_on_warning"  : false,
+    "compiler_hash_type"        : "chunkhash",
+    "compiler_devtool"          : null,
+    "source_maps"               : false,
+    "compiler_stats"            : {
+      "chunks"       : true,
+      "chunkModules" : true,
+      "colors"       : true
+    }
+  },
+
+  "DEVC" : {
+    "cdnHost"                   : "http://devc.test.oborexpress.com",
+    "apiHost"                   : "http://devapi.test.oborexpress.com",
+    "port"                      : "",
+    "compiler_public_path"      : "http://devc.test.oborexpress.com/",
+    "compiler_fail_on_warning"  : false,
+    "compiler_hash_type"        : "chunkhash",
+    "compiler_devtool"          : null,
+    "source_maps"               : true,
+    "compiler_stats"            : {
+      "chunks"       : true,
+      "chunkModules" : true,
+      "colors"       : true
+    }
+  },
+
+  "PRODUCTION" : {
+    "cdnHost"               : "http://c.oborservice.com",
+    "apiHost"               : "http://api.oborservice.com",
+    "port"                  : "",
+    "compiler_public_path"  : "http://c.oborservice.com/",
+    "compiler_fail_on_warning"  : false,
+    "compiler_hash_type"        : "chunkhash",
+    "compiler_devtool"          : null,
+    "source_maps"               : false,
+    "compiler_stats"            : {
+      "chunks"       : true,
+      "chunkModules" : true,
+      "colors"       : true
+    }
+  },
+
+  "APP_TITLE"     : "react-ant-sample",
+  "ENTRY"         : "index.js",
+  "SRC_DIR"       : "src",
+  "TEMPLATES_DIR" : "templates",
+  "ASSETS_DIR"    : "assets",
+  "BUILD_DIR"     : "dist",
+  "BANNER"        : "Yootai inc."
+}
