@@ -146,14 +146,14 @@ webpackConfig.module.rules.push({
                         mergeIdents: false,
                         reduceIdents: false,
                         safe: true,
-                        sourcemap: config.source_maps,
+                        sourcemap: config.css_source_maps,
                     },
                 },
             },
             {
                 loader: 'sass-loader',
                 options: {
-                    sourceMap: config.source_maps,
+                    sourceMap: config.css_source_maps,
                     includePaths: [
                         paths.client('styles'),
                     ],

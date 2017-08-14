@@ -1,37 +1,22 @@
 {
   "DEVELOPMENT" : {
     "cdnHost"               : "http://localhost",
-    "apiHost"               : "http://devapi.test.oborexpress.com",
+    "apiHost"               : "http://devapi.xxx.com",
     "port"                  : 40001,
     "compiler_public_path"  : "http://localhost:40001/",
+    "compiler_devtool"      : "source-map",
     "source_maps"           : true
   },
 
   "QA" : {
-    "cdnHost"                   : "http://consignor.test.oborexpress.com",
-    "apiHost"                   : "http://api.test.oborexpress.com",
+    "cdnHost"                   : "http://qa.xxx.com",
+    "apiHost"                   : "http://qaapi.xxx.com",
     "port"                      : "",
-    "compiler_public_path"      : "http://consignor.test.oborexpress.com/",
+    "compiler_public_path"      : "http://qa.xxx.com/",
     "compiler_fail_on_warning"  : false,
     "compiler_hash_type"        : "chunkhash",
-    "compiler_devtool"          : null,
-    "source_maps"               : false,
-    "compiler_stats"            : {
-      "chunks"       : true,
-      "chunkModules" : true,
-      "colors"       : true
-    }
-  },
-
-  "DEVC" : {
-    "cdnHost"                   : "http://devc.test.oborexpress.com",
-    "apiHost"                   : "http://devapi.test.oborexpress.com",
-    "port"                      : "",
-    "compiler_public_path"      : "http://devc.test.oborexpress.com/",
-    "compiler_fail_on_warning"  : false,
-    "compiler_hash_type"        : "chunkhash",
-    "compiler_devtool"          : null,
-    "source_maps"               : true,
+    "compiler_devtool"          : false,
+    "css_source_maps"           : false,
     "compiler_stats"            : {
       "chunks"       : true,
       "chunkModules" : true,
@@ -40,14 +25,14 @@
   },
 
   "PRODUCTION" : {
-    "cdnHost"               : "http://c.oborservice.com",
-    "apiHost"               : "http://api.oborservice.com",
+    "cdnHost"               : "http://www.xxx.com",
+    "apiHost"               : "http://api.xxx.com",
     "port"                  : "",
-    "compiler_public_path"  : "http://c.oborservice.com/",
+    "compiler_public_path"  : "http://www.xxx.com/",
     "compiler_fail_on_warning"  : false,
     "compiler_hash_type"        : "chunkhash",
-    "compiler_devtool"          : null,
-    "source_maps"               : false,
+    "compiler_devtool"          : false,
+    "css_source_maps"           : false,
     "compiler_stats"            : {
       "chunks"       : true,
       "chunkModules" : true,
@@ -55,7 +40,7 @@
     }
   },
 
-  "APP_TITLE"     : "react-ant-sample",
+  "APP_TITLE"     : "react-redux-antd-ts",
   "ENTRY"         : "index.js",
   "SRC_DIR"       : "src",
   "TEMPLATES_DIR" : "templates",

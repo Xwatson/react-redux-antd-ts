@@ -20,7 +20,7 @@ function webpackCompiler(webpackConfig, statsFormat) {
             const jsonStats = stats.toJson()
             console.log('  Name                                 Size'.white.bold)
             jsonStats.assets.forEach((item) => {
-                console.log(('  ' + item.name + '     ' + item.size).green)
+                console.log(('  ' + item.name + '     ' + (item.size / 1024).toFixed(2) + 'k' ).green)
             })
             // debug(stats.toString(statsFormat))
             console.log('  用时: '.yellow.bold + ((jsonStats.time / 1000) + 's').cyan)
