@@ -41,7 +41,7 @@
   },
 
   "APP_TITLE"     : "react-redux-antd-ts",
-  "ENTRY"         : "index.js",
+  "ENTRY"         : "index.tsx",
   "SRC_DIR"       : "src",
   "TEMPLATES_DIR" : "templates",
   "ASSETS_DIR"    : "assets",
