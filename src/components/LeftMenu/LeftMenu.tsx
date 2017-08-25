@@ -23,19 +23,20 @@ export default class LeftMenu extends React.Component<LeftMenuProps, LeftMenuSta
         }
     }
 
-    public handleClick(e: any): void {
+    public handleClick = (e: any): void => {
         this.hasClick = true
+        console.log('aa', this)
         this.setState({
             ...this.state,
             current: e.key
         })
     }
-    public convertDetailPage(): string {
+    public convertDetailPage = (): string => {
         let location = browserHistory.getCurrentLocation()
         let match = location.pathname.match(reg)
         return match && match[3] ? '/' + match[2] : location.pathname
     }
-    public _renderSubs(menus: any): JSX.Element {
+    public _renderSubs = (menus: any): JSX.Element => {
         return menus.map(function(item: any) {
             return (
                 <SubMenu key={item.key} name={item.name} title={item.title}>
