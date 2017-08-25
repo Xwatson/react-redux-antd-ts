@@ -1,17 +1,20 @@
+import { ItemsStates } from './../components/Items';
 /**
  * Created by xwatson on 2016/12/9.
  */
-import { connect } from 'react-redux'
-import { fetchItems } from '../modules/items'
+import { connect, Dispatch } from 'react-redux'
+import * as actions from '../modules/items'
 
 import Items from '../components/Items'
 
-const mapDispatchToProps = {
-    fetchItems : () => fetchItems()
+const mapDispatchToProps = (dispatch: Dispatch<actions.ItemsActions>) => {
+    return {
+        fetchItems : () => dispatch(actions.fetchItems()),
+    }
 }
 
-const mapStateToProps = (state) => ({
-    items : state.items
+const mapStateToProps = ({ data }: ItemsStates) => ({
+    data
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Items)

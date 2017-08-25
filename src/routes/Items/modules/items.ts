@@ -9,17 +9,16 @@ export type ITEM_REQUIRE = typeof ITEM_REQUIRE
 export const ITEM_RECEIVE: string = 'ITEM_RECEIVE'
 export type ITEM_RECEIVE = typeof ITEM_RECEIVE
 
-export interface BaseAction {
-    type: string
+export interface InitItems {
+    type: ITEM_REQUIRE
     payload?: any
 }
-export interface InitItems extends BaseAction {
-    type: ITEM_REQUIRE
-}
-export interface ReceiveItems extends BaseAction {
+export interface ReceiveItems {
     type: ITEM_RECEIVE
-    payload: object
+    payload?: any
 }
+export type ItemsActions = InitItems | ReceiveItems
+
 export function initItems(): InitItems {
     return {
         type: ITEM_REQUIRE
@@ -61,10 +60,10 @@ export function fetchItems(): any {
 }
 
 const ACTION_HANDLERS = {
-    [ITEM_REQUIRE]: (state: ItemsStates, action: BaseAction) => {
+    [ITEM_REQUIRE]: (state: ItemsStates, action: ItemsActions) => {
         return ({ ...state, fetching: true })
     },
-    [ITEM_RECEIVE] : (state: ItemsStates, action: BaseAction) => {
+    [ITEM_RECEIVE] : (state: ItemsStates, action: ItemsActions) => {
         return ({ ...state, fetching: false, data: action.payload.tableDate })
     }
 }
@@ -73,7 +72,7 @@ const initialState = {
     fetching: false,
     data: []
 }
-export default function itemsReducer(state: ItemsStates = initialState, action: BaseAction) {
+export default function itemsReducer(state: ItemsStates = initialState, action: ItemsActions) {
     const handler = ACTION_HANDLERS[action.type]
 
     return handler ? handler(state, action) : state

@@ -110,9 +110,9 @@ if (!__TEST__) {
 // ts loader
 // ------------------------------------
 webpackConfig.module.rules = [
-    { test: /\.ts|\.tsx$/, loader: "awesome-typescript-loader", include: __dirname },
+    { test: /\.(ts|tsx)$/, loader: "babel-loader!awesome-typescript-loader", exclude: /node_modules/ },
     { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
-    { test: /\.json$/, loader: 'json' }
+    { test: /\.json$/, loader: 'json-loader' }
 ]
 
 // styles loader
@@ -125,7 +125,7 @@ const extractStyles = new ExtractTextPlugin({
 })
 
 webpackConfig.module.rules.push({
-    test: /\.(sass|scss)$/,
+    test: /\.(sass|scss|css)$/,
     loader: extractStyles.extract({
         fallback: 'style-loader',
         use: [

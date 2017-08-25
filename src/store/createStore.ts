@@ -2,7 +2,7 @@
  * Created by xwatson on 2016/12/9.
  */
 import { applyMiddleware, compose, createStore } from 'redux'
-import * as thunk from 'redux-thunk'
+import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { makeRootReducer } from './reducers'
 import { browserHistory } from 'react-router'

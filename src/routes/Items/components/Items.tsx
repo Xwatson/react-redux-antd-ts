@@ -12,6 +12,8 @@ import TableEditInputSearch from '../../../components/TableEditInputSearch'
 
 export interface ItemsProps {
     params: object
+    fetchItems: () => any
+    data: any
 }
 export interface ItemsStates {
     inputSearch?: Array<any>
@@ -131,7 +133,7 @@ export default class Items extends React.Component<ItemsProps, ItemsStates> {
         if (value === '') {
             return
         }
-        let _search = this.state.inputSearch
+        let _search = this.state.inputSearch || []
         // 模拟数据请求
         setTimeout(
             () => {

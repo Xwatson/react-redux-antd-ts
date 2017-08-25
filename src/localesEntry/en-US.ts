@@ -1,10 +1,9 @@
 import antdEn from 'antd/lib/locale-provider/en_US'
 import appLocaleData from 'react-intl/locale-data/en'
-import enMessages from '../../locales/en.json'
 
 const appLocale = {
     messages: {
-        ...enMessages
+        ...require('../../locales/en.json')
     },
     antd: antdEn,
     locale: 'en-US',
