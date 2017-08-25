@@ -110,7 +110,7 @@ if (!__TEST__) {
 // ts loader
 // ------------------------------------
 webpackConfig.module.rules = [
-    { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+    { test: /\.ts|\.tsx$/, loader: "awesome-typescript-loader", include: __dirname },
     { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
     { test: /\.json$/, loader: 'json' }
 ]
